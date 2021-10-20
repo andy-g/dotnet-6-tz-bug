@@ -1,0 +1,26 @@
+version: "3.4"
+
+services:
+  tz-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tz-test:latest
+
+  tz-test-system-date:
+    image: tz-test:latest
+    depends_on:
+    - tz-test
+    command: date
+
+  tz-test-alpine:
+    build:
+      context: .
+      dockerfile: Dockerfile-alpine
+    image: tz-test-alpine:latest
+
+  tz-test-alpine-system-date:
+    image: tz-test-alpine:latest
+    depends_on:
+    - tz-test-alpine
+    command: date

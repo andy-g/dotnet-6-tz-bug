@@ -1,0 +1,27 @@
+# +----------------------------------------------+
+#  ignore files not required in the docker image
+# +----------------------------------------------+
+
+# ignore dotfiles (.git, .gitignore, .gitlab-ci.yml)
+.*
+
+# Ignore docker specific files
+docker-compose.yml
+Dockerfile
+
+# Ignore all markdown files
+**/*.md
+
+# ignore other files & folders
+postman
+chart
+_ide_helper.php
+infra
+
+# Build Artifacts
+/**/bin
+/**/obj
+
+# Ignore local configuration
+**/appsettings.json
+**/*.json
